@@ -21,4 +21,10 @@ public class UserServiceImpl implements UserService {
         UserEntity userEntity = userRepo.save(modelMapper.map(userDto, UserEntity.class));
         return modelMapper.map(userEntity, UserDto.class);
     }
+
+    @Override
+    public boolean isExistEmail(String email) {
+       return userRepo.existsByEmail(email);
+
+    }
 }
