@@ -18,6 +18,7 @@ public class UserController {
     private LoginService loginService;
 
     @PostMapping("/add-user")
+
     public UserDto addUser(@RequestBody UserDto userDto){
 
         if (userDto.getEmail()!=null &&
