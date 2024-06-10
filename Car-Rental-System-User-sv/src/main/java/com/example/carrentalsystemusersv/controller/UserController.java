@@ -19,20 +19,21 @@ public class UserController {
 
     @PostMapping("/add-user")
     public UserDto addUser(@RequestBody UserDto userDto){
-        if (userService.isExistEmail(userDto.getEmail())){
-            return null;
-        }else {
-            UserDto user = userService.addUser(userDto);
-            if (user!=null){
+
+        if (userDto.getEmail()!=null &&
+            userDto.getPassword()!=null &&
+            userDto.getUsername()!=null){
+            if (userService.isExistEmail(userDto.getEmail())){
+                return null;
+            }else {
+                UserDto user = userService.addUser(userDto);
                 loginService.addLoginDetails(new LoginDetailsDto(userDto.getEmail(),
-                        userDto.getPassword(),
-                        UserRole.Customer));
+                                             userDto.getPassword(),
+                                             UserRole.Admin));
                 return user;
             }
-            return null;
         }
-
-
+        return null;
     }
 
 }

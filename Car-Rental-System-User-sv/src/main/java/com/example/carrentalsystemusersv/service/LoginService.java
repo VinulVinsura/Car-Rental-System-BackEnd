@@ -3,5 +3,6 @@ package com.example.carrentalsystemusersv.service;
 import com.example.carrentalsystemusersv.dto.LoginDetailsDto;
 
 public interface LoginService {
-    void addLoginDetails(LoginDetailsDto dto);
+    Boolean addLoginDetails(LoginDetailsDto dto);
+    LoginDetailsDto loginValidation(LoginDetailsDto dto);
 }

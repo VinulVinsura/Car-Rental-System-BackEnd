@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LoginDetailsDto {
+
     private String email;
     private String password;
     private UserRole userRole;
