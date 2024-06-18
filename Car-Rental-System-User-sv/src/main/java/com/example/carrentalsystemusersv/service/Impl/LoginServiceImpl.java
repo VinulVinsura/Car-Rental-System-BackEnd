@@ -24,7 +24,6 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public LoginDetailsDto loginValidation(LoginDetailsDto dto) {
-        System.out.println("1");
         Boolean isExist = repo.existsByEmailAndPassword(dto.getEmail(), dto.getPassword());
         if (isExist){
             LoginEntity loginEntity = repo.findByEmailAndPassword(dto.getEmail(), dto.getPassword());

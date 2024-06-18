@@ -15,8 +15,7 @@ public class LoginController {
     private LoginService loginService;
     @PostMapping("/validation")
     public LoginDetailsDto loginValidation(@RequestBody LoginDetailsDto dto){
-
-       return loginService.loginValidation(dto);
+        return loginService.loginValidation(dto);
     }
 
 }
