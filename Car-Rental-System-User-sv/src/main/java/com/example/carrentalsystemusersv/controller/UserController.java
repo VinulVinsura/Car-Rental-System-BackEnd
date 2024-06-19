@@ -29,7 +29,8 @@ public class UserController {
                 return null;
             }else {
                 UserDto user = userService.addUser(userDto);
-                loginService.addLoginDetails(new LoginDetailsDto(userDto.getEmail(),
+                loginService.addLoginDetails(new LoginDetailsDto(null,
+                                             userDto.getEmail(),
                                              userDto.getPassword(),
                                              UserRole.Admin));
                 return user;
