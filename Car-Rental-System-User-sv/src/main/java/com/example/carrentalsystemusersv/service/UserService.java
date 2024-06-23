@@ -5,4 +5,5 @@ import com.example.carrentalsystemusersv.dto.UserDto;
 public interface UserService {
     UserDto addUser(UserDto userDto);
     boolean isExistEmail(String email);
+    UserDto getUsrById(Long id);
 }

@@ -27,4 +27,10 @@ public class UserServiceImpl implements UserService {
        return userRepo.existsByEmail(email);
 
     }
+
+    @Override
+    public UserDto getUsrById(Long id) {
+         return modelMapper.map( userRepo.findById(id), UserDto.class);
+
+    }
 }

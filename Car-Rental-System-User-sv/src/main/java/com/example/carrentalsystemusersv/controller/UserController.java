@@ -18,8 +18,6 @@ public class UserController {
     private LoginService loginService;
 
     @PostMapping("/add-user")
-
-
     public UserDto addUser(@RequestBody UserDto userDto){
 
         if (userDto.getEmail()!=null &&
@@ -38,5 +36,13 @@ public class UserController {
         }
         return null;
     }
+
+    @GetMapping("/get-user-byId/{id}")
+
+    public UserDto getUserById(@PathVariable Long id){
+        return userService.getUsrById(id);
+    }
+
+
 
 }
